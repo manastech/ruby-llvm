@@ -4,6 +4,7 @@ require 'ffi'
 
 module LLVM::C
   extend FFI::Library
+  ffi_lib_flags :now, :global
   ffi_lib 'LLVM-3.3'
   
   def self.attach_function(name, *_)

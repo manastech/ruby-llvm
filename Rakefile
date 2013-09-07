@@ -42,6 +42,7 @@ task :generate_ffi do
     FFIGen.generate(
       module_name: 'LLVM::C',
       ffi_lib:     'LLVM-3.3',
+      ffi_lib_flags: [:now, :global],
       headers:     headers.map { |header| "llvm-c/#{header}" },
       cflags:      LLVM::CONFIG::CFLAGS.split(/\s/),
       prefixes:    %w(LLVM),
