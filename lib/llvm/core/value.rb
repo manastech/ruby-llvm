@@ -110,6 +110,10 @@ module LLVM
       BasicBlock.from_ptr(ptr) unless ptr.null?
     end
 
+    def delete
+      C.delete_basic_block(self)
+    end
+
     def first_instruction  # deprecated
       instructions.first
     end
